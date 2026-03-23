@@ -5,6 +5,8 @@ detects threats via rule-based, IOC, and ML methods, scores risk, and
 presents everything in a professional dark security dashboard.
 
 ---
+<img width="1919" height="950" alt="image" src="https://github.com/user-attachments/assets/72ade925-a6b4-4620-991c-ac428975a721" />
+
 
 ## Quick Start
 
@@ -36,6 +38,7 @@ pip install Flask==3.0.3 Flask-SQLAlchemy==3.1.1 Flask-Login==0.6.3 Werkzeug==3.
 pip install scikit-learn==1.4.2 joblib==1.4.2
 pip install scapy==2.5.0 requests==2.32.3 fpdf2==2.7.9 python-dotenv==1.0.1
 ```
+<img width="1673" height="873" alt="image" src="https://github.com/user-attachments/assets/84ba309c-1d38-4aef-86fe-3988faa3f56b" />
 
 **Linux / macOS:**
 ```bash
@@ -137,19 +140,6 @@ Version 2.1.4 has prebuilt Windows wheels and requires no compiler.
 | ML Anomaly | IsolationForest flags flow as outlier | Medium |
 
 ---
-
-## Risk Score Logic
-
-| Signal | Points |
-|--------|--------|
-| Rule hit (Critical) | +40 |
-| Rule hit (High) | +30 |
-| Rule hit (Medium) | +20 |
-| IOC match | +40 |
-| IOC Critical boost | +15 |
-| ML anomaly | +0–25 |
-| Bad reputation (VirusTotal) | +25 |
-
 **Severity bands:** 0–24 Low · 25–49 Medium · 50–74 High · 75–100 Critical
 
 ---
@@ -163,24 +153,6 @@ Version 2.1.4 has prebuilt Windows wheels and requires no compiler.
 | Nmap Scanner | Advanced → Nmap Scanner (internal IPs only) |
 | Session Reconstruction | Investigation → alert → Reconstruct Session |
 | Baseline Comparison | Advanced → Baseline Compare |
-
----
-
-## API Endpoints
-
-| Method | URL | Description |
-|--------|-----|-------------|
-| POST | `/capture/start` | Start packet capture |
-| POST | `/capture/stop` | Stop packet capture |
-| GET | `/capture/status` | Capture running state |
-| POST | `/flows/build` | Aggregate packets into flows |
-| POST | `/alerts/run-detection` | Run full detection pipeline |
-| GET | `/dashboard/api/summary-stats` | Live stat counts |
-| GET | `/dashboard/api/traffic-timeline` | Packets/min last hour |
-| GET | `/advanced/api/graph-data` | Network graph JSON |
-| POST | `/advanced/api/dpi-scan` | DPI scan a session |
-| POST | `/advanced/api/nmap-scan` | Nmap scan a host |
-| GET | `/health` | Health check (no auth) |
 
 ---
 
