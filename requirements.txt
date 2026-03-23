@@ -1,0 +1,31 @@
+# ── Core Flask stack ──────────────────────────────────────────
+Flask==3.0.3
+Flask-SQLAlchemy==3.1.1
+Flask-Login==0.6.3
+Flask-WTF==1.2.1
+Werkzeug==3.0.3
+SQLAlchemy==2.0.31
+
+# ── Packet capture (requires Npcap on Windows) ────────────────
+scapy==2.5.0
+
+# ── Data / ML ─────────────────────────────────────────────────
+# pandas: use a version with prebuilt Windows wheels
+pandas==2.1.4
+scikit-learn==1.4.2
+numpy==1.26.4
+joblib==1.4.2
+
+# ── Threat intel enrichment ───────────────────────────────────
+requests==2.32.3
+
+# ── Reporting ─────────────────────────────────────────────────
+fpdf2==2.7.9
+
+# ── Utilities ─────────────────────────────────────────────────
+python-dotenv==1.0.1
+
+# ── Optional (install manually if needed) ─────────────────────
+# python-whois==0.9.4   # for WHOIS lookups
+# pyshark==0.6          # alternative capture (needs Wireshark)
+# geoip2==4.8.0         # for local GeoIP DB
