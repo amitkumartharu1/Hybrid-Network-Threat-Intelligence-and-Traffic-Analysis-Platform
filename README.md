@@ -123,67 +123,6 @@ Version 2.1.4 has prebuilt Windows wheels and requires no compiler.
 9. Reports page       → Download PDF / CSV report
 ```
 
----
-
-## Project Structure
-
-```
-threat_intel_platform/
-├── run.py                         ← Entry point (use this, not app.py)
-├── config.py                      ← All configuration
-├── requirements.txt
-├── seed_data.py                   ← Demo data loader
-├── install_windows.bat            ← Windows one-click installer
-├── install_linux.sh               ← Linux/macOS installer
-├── .env.example                   ← Copy to .env and edit
-├── datasets/
-│   └── sample_iocs.csv            ← Ready-to-upload IOC list
-├── reports/                       ← Generated report files
-├── instance/
-│   └── platform.db                ← SQLite database (auto-created)
-└── app/
-    ├── __init__.py                ← Flask app factory
-    ├── models/                    ← SQLAlchemy ORM models
-    │   ├── user.py
-    │   ├── packet.py
-    │   ├── flow.py
-    │   ├── alert.py
-    │   ├── ioc.py
-    │   └── system_log.py
-    ├── routes/                    ← Flask blueprints (one per section)
-    │   ├── auth.py
-    │   ├── dashboard.py
-    │   ├── capture.py
-    │   ├── flows.py
-    │   ├── alerts.py
-    │   ├── ioc.py
-    │   ├── ml.py
-    │   ├── investigation.py
-    │   ├── advanced.py
-    │   ├── admin.py
-    │   └── reports.py
-    ├── services/                  ← All business logic
-    │   ├── capture_service.py     ← Scapy live capture engine
-    │   ├── flow_service.py        ← 5-tuple flow aggregation
-    │   ├── detection_rules.py     ← 6 rule-based detectors
-    │   ├── detection_service.py   ← Detection orchestrator
-    │   ├── ioc_service.py         ← IOC matching + CSV import
-    │   ├── ml_service.py          ← IsolationForest anomaly detection
-    │   ├── scoring_service.py     ← Risk score engine (0-100)
-    │   ├── threat_intel_service.py← GeoIP, WHOIS, VirusTotal
-    │   ├── report_service.py      ← CSV / JSON / PDF export
-    │   ├── dpi_service.py         ← Deep packet inspection (9 sigs)
-    │   ├── graph_service.py       ← Network graph data builder
-    │   ├── session_reconstructor.py← TCP session reassembly
-    │   ├── nmap_service.py        ← Nmap host scanning
-    │   └── baseline_service.py    ← Behavioral baseline comparison
-    └── utils/
-        ├── helpers.py             ← format_bytes, is_valid_ip, etc.
-        └── logger.py              ← Structured DB logging
-```
-
----
-
 ## Detection Capabilities
 
 | Rule | Trigger | Severity |
